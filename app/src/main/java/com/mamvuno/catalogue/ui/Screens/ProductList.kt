@@ -35,7 +35,9 @@ fun ProductList(
     ){
         TextField(
             value = query,
-            onValueChange = { productViewModel.setQuery(query) },
+            onValueChange = {
+                query = it
+                productViewModel.setQuery(query) },
             placeholder = { Text("Buscar producto...") }
         )
         Spacer(modifier = Modifier.height(16.dp))
